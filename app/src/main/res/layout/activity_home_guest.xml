@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <!-- AppBar Layout   -->
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/custom_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentTop="true"
+                android:background="#383838"
+                android:elevation="2dp"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/ib_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="#383838"
+                        android:src="@mipmap/icon" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="85">
+
+                    <RelativeLayout
+                        android:id="@+id/directory_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:layout_toLeftOf="@+id/settings">
+
+                        <ImageButton
+                            android:id="@+id/ib_directory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="#383838"
+                            android:src="@mipmap/directory_icon"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="16dp"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/ib_settings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="#383838"
+                            android:src="@mipmap/settings_profile" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/plus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/ib_create_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="#383838"
+                        android:src="@mipmap/plus" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/tabs_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/custom_toolbar"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#383838" />
+
+                <com.campusconnect.slidingtab.SlidingTabLayout_home
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#383838" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_slamdunk_scoreboard_title"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="SLAMDUNK SCOREBOARD"
+                android:background="#ffffff"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:textColor="#383838"/>
+        </android.support.design.widget.AppBarLayout>
+
+
+        <FrameLayout
+            android:id="@+id/viewpager_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#eaebec" />
+
+            <ImageView
+                android:id="@+id/blur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <include layout="@layout/error_layout" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

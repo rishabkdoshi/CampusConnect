@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/bk_college_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:tint="#be000000"
+        android:src="@drawable/nitk_app"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textColor="#383838"
+        android:padding="12dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/edittext_rounded"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:id="@+id/student_alumni_switch_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/et_name">
+        <TextView
+            android:id="@+id/switch_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#fad156"
+            android:text="Student"/>
+        <Switch
+            android:id="@+id/student_alumni_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:switchMinWidth="40dp"
+            android:textOff=""
+            android:textOn=""
+            android:thumb="@drawable/customswitchselector"
+            android:track="@drawable/custom_track"
+            android:layout_toRightOf="@+id/switch_student"
+            android:checked="false" />
+        <TextView
+            android:id="@+id/switch_alumni"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#a0a0a0"
+            android:layout_toRightOf="@+id/student_alumni_switch"
+            android:text="Alumnus"/>
+    </RelativeLayout>
+
+
+
+    <AutoCompleteTextView
+        android:id="@+id/et_branch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/student_alumni_switch_group"
+        android:hint="Branch"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textColor="#383838"
+        android:background="@drawable/edittext_rounded"
+        android:layout_marginTop="5dp"
+        android:padding="12dp"
+        android:text="">
+    </AutoCompleteTextView>
+
+
+    <EditText
+        android:id="@+id/et_batch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Year of Graduation"
+        android:layout_below="@+id/et_branch"
+        android:inputType="number"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textColor="#383838"
+        android:maxLines="1"
+        android:layout_marginTop="5dp"
+        android:scrollHorizontally="true"
+        android:background="@drawable/edittext_rounded"
+        android:padding="12dp" />
+
+    <TextView
+        android:id="@+id/tv_interests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="My interests..."
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/et_batch"
+        android:text=""
+        android:maxLines="5"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textColor="#383838"
+        android:scrollHorizontally="true"
+        android:background="@drawable/edittext_rounded"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/et_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_interests"
+        android:hint="Location"
+        android:textColor="#383838"
+        android:visibility="invisible"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittext_rounded"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/et_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_location"
+        android:hint="Company"
+        android:textColor="#383838"
+        android:visibility="invisible"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/edittext_rounded"
+        android:padding="12dp" />
+
+    <Button
+        android:id="@+id/b_continue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/et_company"
+        android:layout_marginTop="10dp"
+        android:textColor="#383838"
+        android:background="#eaebec"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:minHeight="1dp"
+        android:text="CONTINUE"
+        android:textSize="15sp" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

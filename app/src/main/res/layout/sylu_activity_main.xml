@@ -1,0 +1,198 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:windowSoftInputMode="adjustPan"
+    tools:context=".MainActivity_Sylu">
+
+  <!--  <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/image1"/>-->
+
+    <LinearLayout
+        android:id="@+id/channel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <Button
+            android:id="@+id/channel_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:minHeight="1dp"
+            android:minWidth="1dp"
+            android:padding="10dp"
+            android:textColor="#eaebec"
+            android:textSize="16sp"
+            android:background="#a0a0a0"
+            android:onClick="changeFilter"
+            android:text="Filter By Events"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    </LinearLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/channel_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_show_blank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="No comments here,Be the first one to comment :)"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_live_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eaebec"
+                android:clipToPadding="false"
+                android:paddingBottom="50dp"/>
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <View
+        android:id="@+id/divider_above_msg_box"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@+id/msg_box"
+        android:background="#eaebec" />
+
+    <RelativeLayout
+        android:id="@+id/msg_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="?attr/actionBarSize"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/comment_edittext_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_toLeftOf="@+id/comment_icon_container">
+
+            <ImageButton
+                android:id="@+id/add_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/hashtag_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentLeft="true"/>
+            <View
+                android:id="@+id/hastag_comment_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#eaebec"
+                android:layout_toRightOf="@+id/add_tag"
+                android:layout_alignTop="@+id/message_et"
+                android:layout_alignBottom="@+id/message_et"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="6dp"/>
+            <EditText
+                android:id="@+id/message_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="center_vertical|left"
+                android:maxLength="150"
+                android:hint="Tell your college what's #happening..."
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:minHeight="50dp"
+                android:layout_toRightOf="@+id/hastag_comment_divider"
+                android:layout_toLeftOf="@+id/comment_camera_divider"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="#383838"
+                android:textColorHint="#a0a0a0"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/comment_camera_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#eaebec"
+                android:layout_toLeftOf="@+id/add_image"
+                android:layout_alignTop="@+id/message_et"
+                android:layout_alignBottom="@+id/message_et"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="6dp"/>
+
+            <ImageButton
+                android:id="@+id/add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/camera_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/comment_icon_container"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/comment_edittext_container"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/comment_edittext_container"
+            android:background="#a0a0a0"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <ImageButton
+                android:id="@+id/ib_sendmessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="#ffffff"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/send_icon" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout01"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/channel_layout"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/loading_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminate="true" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

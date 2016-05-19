@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <!-- AppBar Layout   -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentTop="true"
+            android:background="#383838"
+            android:elevation="2dp"
+            app:layout_scrollFlags="scroll|enterAlways"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <TextView
+                android:id="@+id/tv_group_name_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Group_name"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#ffffff"
+                android:layout_toLeftOf="@+id/tv_invite"
+                android:textSize="20sp"
+                android:paddingLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:gravity="left|center_vertical"/>
+            <TextView
+                android:id="@+id/tv_invite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_rounded_for_invite_inadmin"
+                android:gravity="center"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textColor="#ffffff"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:text="Invite"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/tabs_container"
+            android:layout_below="@+id/custom_toolbar"
+            android:layout_width="match_parent"
+            android:elevation="2dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#383838" />
+            <com.campusconnect.slidingtab.SlidingTabLayout_InAdmin
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#383838" />
+        </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#eaebec" />
+    </FrameLayout>
+
+    <include layout="@layout/error_layout" />
+
+</android.support.design.widget.CoordinatorLayout>

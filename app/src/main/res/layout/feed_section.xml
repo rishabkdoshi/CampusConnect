@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eaebec"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_show_blank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="Create posts to create your campus feed!"
+                android:textSize="20sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/helper_text_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:paddingBottom="6dp"
+                android:paddingTop="6dp"
+                android:visibility="gone"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/tv_helper_campus_feed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/ib_helper_close"
+                    android:layout_weight="85"
+                    android:paddingLeft="10dp"
+                    android:text="Here, you shall find out about everything happening in and around the college."
+                    android:textColor="#383838"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignBottom="@+id/tv_helper_campus_feed"
+                    android:layout_alignTop="@+id/tv_helper_campus_feed"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toLeftOf="@+id/ib_helper_close"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:id="@+id/helper_close_container"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15">
+
+                    <ImageButton
+                        android:id="@+id/ib_helper_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@android:color/transparent"
+                        android:src="@mipmap/cross"
+                        android:tint="#a0a0a0" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_college_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/helper_text_container"
+                android:background="#eaebec"
+                android:clipToPadding="false"
+                android:paddingBottom="?attr/actionBarSize" />
+
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+        <!-- AppBar Layout   -->
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/custom_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_alignParentTop="true"
+                android:background="#383838"
+                android:elevation="2dp"
+                android:orientation="horizontal"
+                android:weightSum="100"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/ib_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="#383838"
+                        android:src="@mipmap/icon" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="85">
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/super_admin_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/tv_admin"
+                        android:layout_weight="10">
+
+                        <ImageButton
+                            android:id="@+id/ib_super_admin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="#383838"
+                            android:src="@mipmap/ic_action_admin"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/tv_admin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/directory_container"
+                        android:background="@drawable/edittext_rounded_for_invite_inadmin"
+                        android:gravity="center"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingTop="8dp"
+                        android:text="ADMIN"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp" />
+                    <RelativeLayout
+                        android:id="@+id/directory_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="0dp"
+                        android:layout_toLeftOf="@+id/settings">
+
+                        <ImageButton
+                            android:id="@+id/ib_directory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="#383838"
+                            android:src="@mipmap/directory_icon"
+                            android:visibility="visible" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginLeft="7dp"
+                        android:layout_marginRight="8dp"
+                        android:gravity="center">
+
+                        <ImageButton
+                            android:id="@+id/ib_settings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="#383838"
+                            android:src="@mipmap/settings_profile" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/plus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <ImageButton
+                        android:id="@+id/ib_create_post"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="#383838"
+                        android:src="@mipmap/plus" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/tabs_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/custom_toolbar"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#383838" />
+
+                <com.campusconnect.slidingtab.SlidingTabLayout_home
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#383838" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/score_container"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@id/tabs_container"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="6">
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/tv_team_name_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eaebec"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="3dp"
+                        android:text="2015"
+                        android:textColor="#383838"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_2015_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_team_name_1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:background="#ffffff"
+                        android:padding="2dp"
+                        android:text="- -"
+                        android:textColor="#383838"
+                        android:textSize="21sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#a0a0a0">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ffffff" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#a0a0a0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_team_name_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eaebec"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="3dp"
+                        android:text="2014"
+                        android:textColor="#383838"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_2014_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_team_name_2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:background="#ffffff"
+                        android:padding="2dp"
+                        android:text="- -"
+                        android:textColor="#383838"
+                        android:textSize="21sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#a0a0a0">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ffffff" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#a0a0a0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_team_name_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eaebec"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="3dp"
+                        android:text="2013"
+                        android:textColor="#383838"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_2013_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_team_name_3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:background="#ffffff"
+                        android:padding="2dp"
+                        android:text="- -"
+                        android:textColor="#383838"
+                        android:textSize="21sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#a0a0a0">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ffffff" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#a0a0a0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_team_name_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eaebec"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="3dp"
+                        android:text="2012"
+                        android:textColor="#383838"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_2012_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_team_name_4"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:background="#ffffff"
+                        android:padding="2dp"
+                        android:text="- -"
+                        android:textColor="#383838"
+                        android:textSize="21sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#a0a0a0">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ffffff" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#a0a0a0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_team_name_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eaebec"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="3dp"
+                        android:text="Pg&amp;I"
+                        android:textColor="#383838"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_PGI_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_team_name_5"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:background="#ffffff"
+                        android:padding="2dp"
+                        android:text="- -"
+                        android:textColor="#383838"
+                        android:textSize="21sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#a0a0a0">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ffffff" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#a0a0a0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv_team_name_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#eaebec"
+                        android:ellipsize="end"
+                        android:gravity="center_horizontal"
+                        android:maxLines="1"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="2dp"
+                        android:paddingRight="2dp"
+                        android:paddingTop="3dp"
+                        android:text="AHS"
+                        android:textColor="#383838"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tv_AHS_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_team_name_6"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="7dp"
+                        android:background="#ffffff"
+                        android:padding="2dp"
+                        android:text="- -"
+                        android:textColor="#383838"
+                        android:textSize="21sp" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="#a0a0a0">
+
+                        <View
+                            android:layout_width="24dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#ffffff" />
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="2dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="#a0a0a0" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="#a0a0a0" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_slamdunk_scoreboard_title"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="SLAMDUNK SCOREBOARD"
+                android:background="#ffffff"
+                android:textSize="18sp"
+                android:padding="12dp"
+                android:textColor="#383838"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+        <FrameLayout
+            android:id="@+id/viewpager_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#eaebec" />
+
+            <ImageView
+                android:id="@+id/blur"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <include layout="@layout/error_layout" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <View
+        android:id="@+id/shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dc000000"
+        android:visibility="gone" />
+
+
+    <RelativeLayout
+        android:id="@+id/fab_event_container"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_above="@+id/fab_news_container"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_post_event"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:elevation="6dp"
+            android:src="@mipmap/plus_black"
+            app:backgroundTint="#eaebec" />
+
+        <TextView
+            android:id="@+id/tv_post_event_text"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/fab_post_event"
+            android:gravity="center_vertical"
+            android:text="Post an event"
+            android:textColor="#eaebec" />
+
+        <View
+            android:id="@+id/shadow_fab_event"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_toLeftOf="@id/tv_post_event_text"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fab_news_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fab_home"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
+        android:visibility="gone">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_post_news"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:elevation="6dp"
+            android:src="@mipmap/plus_black"
+            app:backgroundTint="#eaebec" />
+
+        <TextView
+            android:id="@+id/tv_post_news_text"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/fab_post_news"
+            android:gravity="center_vertical"
+            android:text="Post a news"
+            android:textColor="#383838" />
+
+        <View
+            android:id="@+id/shadow_fab_news"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_toLeftOf="@id/tv_post_news_text"
+            android:background="@android:color/transparent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="18dp"
+        android:layout_marginRight="12dp"
+        android:elevation="6dp"
+        android:visibility="gone"
+        android:src="@mipmap/plus_post"
+        app:backgroundTint="#eaebec" />
+
+    <RelativeLayout
+        android:id="@+id/msg_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true">
+
+        <RelativeLayout
+            android:id="@+id/comment_edittext_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:layout_toLeftOf="@+id/comment_icon_container">
+
+            <ImageButton
+                android:id="@+id/add_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/hashtag_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentLeft="true"/>
+            <View
+                android:id="@+id/hastag_comment_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#eaebec"
+                android:layout_toRightOf="@+id/add_tag"
+                android:layout_alignTop="@+id/message_et"
+                android:layout_alignBottom="@+id/message_et"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="6dp"/>
+            <EditText
+                android:id="@+id/message_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="center_vertical|left"
+                android:maxLength="150"
+                android:hint="Tell your college what's #happening..."
+                android:inputType="textMultiLine"
+                android:isScrollContainer="true"
+                android:minHeight="50dp"
+                android:layout_toRightOf="@+id/hastag_comment_divider"
+                android:layout_toLeftOf="@+id/comment_camera_divider"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textColor="#383838"
+                android:textColorHint="#a0a0a0"
+                android:textSize="14sp" />
+
+            <View
+                android:id="@+id/comment_camera_divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="#eaebec"
+                android:layout_toLeftOf="@+id/add_image"
+                android:layout_alignTop="@+id/message_et"
+                android:layout_alignBottom="@+id/message_et"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="6dp"/>
+
+            <ImageButton
+                android:id="@+id/add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/camera_icon"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:background="@android:color/transparent"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/comment_icon_container"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/comment_edittext_container"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/comment_edittext_container"
+            android:background="#a0a0a0"
+            android:gravity="center"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <ImageButton
+                android:id="@+id/ib_sendmessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="#ffffff"
+                android:background="@android:color/transparent"
+                android:src="@mipmap/send_icon" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/confirmation_dialog_background"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select your interests"
+        android:textSize="20sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="18dp"
+        android:paddingBottom="18dp"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:gravity="center_vertical"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_interests"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingBottom="60dp"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/tv_dialog_title"
+        android:background="#eaebec" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_alignBottom="@+id/rv_interests"
+        android:background="#dedede"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/btn_reset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="16dp"
+            android:text="RESET"
+            android:textColor="#000000"
+            android:alpha="0.87"
+            android:gravity="center"/>
+        <View
+            android:id="@+id/divider_yes_no"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#000000"
+            android:alpha="0.18"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/btn_yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:clickable="true"
+            android:text="CONFIRM"
+            android:textColor="#000000"
+            android:alpha="0.87"
+            android:gravity="center"/>
+    </LinearLayout>
+
+</RelativeLayout>
